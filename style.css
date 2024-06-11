@@ -1,0 +1,29 @@
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+}
+
+#container {
+  flex: 0 0 auto;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  border: 1px solid black;
+  width: 50%;
+  height: 50%;
+}
+
+.row {
+  flex:auto;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.gridSquare {
+  flex: auto;
+}
