@@ -21,9 +21,9 @@ do {
 
 genDivs(size);
 
-let row = document.querySelectorAll(".row");
+let container = document.querySelector("#container");
 
-row.addEventListener("mouseover", (event) => {
+container.addEventListener("mouseover", (event) => {
   let target = event.target;
   
   if (target.className === "gridSquare") {
