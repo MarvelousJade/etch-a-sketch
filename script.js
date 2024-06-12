@@ -1,5 +1,7 @@
+let container = document.querySelector("#container");
+let size;
+
 function genDivs(size) {
-  let container = document.querySelector("#container");
 
   for (let i = 0; i < size; i++) {
     let row = document.createElement("div");
@@ -13,15 +15,14 @@ function genDivs(size) {
   }
 }
 
-let size;
+function getSize(size) {
+  do {
+    size = parseInt(prompt("Input grid size (less than 100): ", ""));
+  } while(size > 99 || !Number.isInteger(size));
+  return size;
+}
 
-do {
-  size = parseInt(prompt("Input grid size (less than 100): ", ""));
-} while(size > 99 || !Number.isInteger(size));
-
-genDivs(size);
-
-let container = document.querySelector("#container");
+genDivs(64);
 
 container.addEventListener("mouseover", (event) => {
   let target = event.target;
@@ -34,4 +35,24 @@ container.addEventListener("mouseover", (event) => {
 function setBg (target) {
   const randomColor = Math.floor(Math.random() * 16777215).toString(16);
   target.style.backgroundColor = "#" + randomColor;
+}
+
+const clear = document.querySelector("#clear");
+
+clear.addEventListener("click", () => {
+  clickHandler()
+});
+
+function clickHandler() {
+  removeCanvas();
+  size = getSize();
+  genDivs(size);
+}
+
+function removeCanvas() {
+  const rows = document.querySelectorAll(".row");
+
+  while (container.firstChild) {
+    container.removeChild(container.lastChild);
+  }
 }
