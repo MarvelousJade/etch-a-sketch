@@ -16,7 +16,7 @@ function genDivs(size) {
 let size;
 
 do {
-  size = parseInt(prompt("Input grid size: (less than 100)", ""));
+  size = parseInt(prompt("Input grid size (less than 100): ", ""));
 } while(size > 99 || !Number.isInteger(size));
 
 genDivs(size);
