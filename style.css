@@ -5,6 +5,7 @@ html, body {
 
 body {
   display: flex;
+  flex-direction: column;
 }
 
 #container {
@@ -27,4 +28,13 @@ body {
 .gridSquare {
   flex: auto;
   padding-bottom: 100%;
+}
+
+#buttonContainer {
+  display: flex;
+  justify-content: space-around;
+}
+#clear {
+  flex:0 1 auto;
+  margin: 10px 60px;
 }
